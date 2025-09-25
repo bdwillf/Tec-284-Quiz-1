@@ -1,0 +1,27 @@
+
+int buttonRed =0; // variable to set buttonRed to low
+int buttonblue =0; // variable to set buttonblue to low
+int buttongreen=0; // variable to set buttonblue to low
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(2, OUTPUT); // to set the red for pin 2
+pinMode(4, OUTPUT);
+pinMode(7, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+
+if(buttonRed == HIGH) {  // If statement to see if the botton is press
+  digitalWrite(2,HIGH); // to get a red light in the LED
+}
+if (buttonblue == HIGH) {
+  digitalWrite( 4, HIGH); // to get a bluelight when the buttonblue is high
+}
+if (buttongreen == HIGH) {
+  digitalWrite( 7, HIGH); // to get a greenlight when the buttongreen is high
+}
+
+}
