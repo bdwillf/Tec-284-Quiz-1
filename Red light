@@ -1,17 +1,45 @@
+const int buttonRed = 13;   // variable
+const int buttonblue = 12;  // variable
+const int buttongreen = 8;  // variable
+
+int buttonState = 0;   // variable to check the buttonState
+int buttonState2 = 0;  // variable to check the buttonState
+int buttonState3 = 0;  // variable to check the buttonState
+
 void setup() {
-  
-pinMode(2, OUTPUT); // to set the red for pin 2
+  // put your setup code here, to run once:
+  pinMode(2, OUTPUT);         // to set  red to pin 2
+  pinMode(4, OUTPUT);         // to set green to pin 4
+  pinMode(7, OUTPUT);         // to get blue to pin 7
+  pinMode(13, INPUT_PULLUP);  //to set red button to pin 13
+  pinMode(12, INPUT_PULLUP);  // to set green button to pin 12
+  pinMode(8, INPUT_PULLUP);   // to set ble to pin 8
 }
+void function() {
+  // put your main code here, to run repeatedly:
+  bool buttonRedstate = digitalRead(13);   // to read the button if the button is high or low
+  bool buttonbluestate = digitalRead(12);  // to read the button if the button is high or low
+  bool buttongreenstate = digitalRead(8);  // to read the button if the button is high or low
 
+
+  if (buttonRedstate == LOW) {  // If statement to see if the botton is press
+    digitalWrite(2, HIGH);      // to get a red light in the LED
+  } else if (buttonRedstate == HIGH) {
+    digitalWrite(2, LOW);  // to turn off red light
+  }
+  if (buttonbluestate == LOW) {
+    digitalWrite(4, HIGH);  // to get a bluelight when the buttonblue is high
+  } else if (buttonbluestate == HIGH) {
+
+    digitalWrite(4, LOW);  // to turn off the bluelight
+  }
+  if (buttongreenstate == LOW) {
+    digitalWrite(7, HIGH);  // to get a greenlight when the buttongreen is high
+  } else if (buttongreenstate == HIGH) {
+
+    digitalWrite(7, LOW);  // to turn off the greenlight
+  }
+}
 void loop() {
- 
-
-
-if(buttonRead == 1) {
-
-
-  digitalWrite(2,LOW); // to get a red light in the LED
-
-}
-
+  function();
 }
